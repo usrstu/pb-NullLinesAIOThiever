@@ -45,7 +45,6 @@ public class Steal extends Task {
 				if (!npc.valid()) {return;}
 				System.out.println("Can click");
 				int chatBefore = NullAIOThiever.chatmsgcount;
-				npc = ctx.npcs.poll();
 				if (npc.valid()) {
 					npc.interact("Pickpocket");
 					Condition.wait(() -> chatBefore + 1 < NullAIOThiever.chatmsgcount);

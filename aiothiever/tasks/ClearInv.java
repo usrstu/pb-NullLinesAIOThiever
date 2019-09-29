@@ -33,9 +33,6 @@ public class ClearInv extends Task {
 			for (String s : NullAIOThiever.gui.items(NullAIOThiever.gui.getDropString())) {
 				this.itemsToDrop.add(s);
 			}
-			for (String s : this.itemsToDrop) {
-				System.out.println("u got: " + s);
-			}
 		}
 	}
 
@@ -69,7 +66,7 @@ public class ClearInv extends Task {
 		}* POTENTIAL ALCHING CODE */
 		
 		if (!ctx.inventory.select().name(listToArray(this.itemsToDrop)).isEmpty()) {
-			for (Item i : ctx.inventory.select().name(listToArray(this.itemsToDrop))) {
+			for (Item i : ctx.inventory) {
 				if (!i.valid()) {
 					System.out.println("i is null");
 					return;
